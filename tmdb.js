@@ -22,6 +22,46 @@ module.exports = class TMDB {
         this._construct();
     }
 
+    login(username, password) {
+        if ((!username || !password) || this._authentication.expires_at <= Date.now()) return this.loginAsGuest();
+        
+        if (
+            this._authentication.session_id && 
+            this._authentication.username === username
+        ) return Promise.resolve(this._authentication);
+
+        return this.authentication.token.new().then(response => {
+            return this.authentication.token.validate_with_login({
+                username: username,
+                password: password,
+                request_token: response.request_token
+            });
+        }).then(response => {
+            return this.authentication.session.new({request_token: response.request_token});
+        }).then(response => {
+            return this._authentication = {
+                username: username,
+                session_id: response.session_id
+            };
+        });
+    }
+
+    loginAsGuest() {
+        if (
+            this._authentication.session_id && 
+            this._authentication.expires_at > Date.now() &&
+            this._authentication.username === 'guest'
+        ) return Promise.resolve(this._authentication);
+
+        return this.authentication.guest_session.new().then(response => {
+            return this._authentication = {
+                session_id: response.guest_session_id,
+                expires_at: Date.parse(response.expires_at),
+                username: 'guest'
+            };
+        });
+    }
+
     // Creates methods for all requests
     _construct() {
         for (let url in methods) {
@@ -44,6 +84,7 @@ module.exports = class TMDB {
 
     // Parse url before api call
     _parse(method, params) {
+        if (method.auth && !this._authentication.session_id) throw Error('You need to be logged in');
         if (!params) params = {};
         
         const queryParts = [];
@@ -92,6 +133,10 @@ module.exports = class TMDB {
 
         queryParts.push('api_key=' + this._settings.apiv3);
 
+        if (method.auth) {
+            queryParts.push('session_id=' + this._authentication.session_id);
+        }
+
         let url = this._settings.endpoint;
 
         url += pathParts.join('/');
@@ -120,9 +165,7 @@ module.exports = class TMDB {
 
         req.body = JSON.stringify(req.body);
 
-        return got(req.url, req).then(response => 
-            JSON.parse(response.body);
-        );
+        return got(req.url, req).then(response => JSON.parse(response.body));
     }
 
 }

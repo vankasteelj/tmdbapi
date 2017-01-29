@@ -183,7 +183,6 @@
         "body": {
             "name": null,
             "description": null,
-            "language": null
         }
     },
     "/list/add": {
