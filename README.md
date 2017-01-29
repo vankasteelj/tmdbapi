@@ -18,6 +18,14 @@ const tmdb = new (require('tmdb'))({
 });
 ```
 
+### Simple login
+
+```js
+tmdb.login('myusername', 'mypassword')
+  .then(session => console.log('connected', session))
+  .catch(console.error);
+```
+
 ### Calls
 
 A complete list of calls can be found on [the wiki](/wiki/Supported-methods)
