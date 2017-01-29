@@ -1,7 +1,8 @@
 {
     "name": "tmdbapi",
     "description": "TheMovieDB.com API wrapper for node.js",
-    "version": "0.0.0",
+    "version": "1.0.0",
+    "main": "tmdb.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/vankasteelj/tmdbapi.git"
@@ -12,8 +13,7 @@
         "api",
         "tmdb"
     ],
-    "main": "tmdb.js",
     "dependencies": {
-        "got": "^6.7.1",
+        "got": "^6.7.1"
     }
 }

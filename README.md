@@ -28,7 +28,7 @@ tmdb.login('myusername', 'mypassword')
 
 ### Calls
 
-A complete list of calls can be found on [the wiki](/wiki/Supported-methods)
+A complete list of calls can be found on [the wiki](https://github.com/vankasteelj/tmdbapi/wiki/Supported-methods)
 
 ## License 
 
