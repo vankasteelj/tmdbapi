@@ -182,7 +182,7 @@
         "method": "POST",
         "body": {
             "name": null,
-            "description": null,
+            "description": null
         }
     },
     "/list/add": {
