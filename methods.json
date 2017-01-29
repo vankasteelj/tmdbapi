@@ -6,17 +6,17 @@
     "/account/lists": {
         "url": "/account/:account_id/lists",
         "auth": true,
-        "optionnal": ["account_id"]
+        "optional": ["account_id"]
     },
     "/account/favorite/movies": {
         "url": "/account/:account_id/favorite/movies?sort_by=",
         "auth": true,
-        "optionnal": ["account_id", "sort_by"]
+        "optional": ["account_id", "sort_by"]
     },
     "/account/favorite/tv": {
         "url": "/account/:account_id/favorite/tv?sort_by=",
         "auth": true,
-        "optionnal": ["account_id", "sort_by"]
+        "optional": ["account_id", "sort_by"]
     },
     "/account/favorite/edit": {
         "url": "/account/:account_id/favorite",
@@ -27,32 +27,32 @@
             "media_id": null,
             "favorite": null
         },
-        "optionnal": ["account_id"]
+        "optional": ["account_id"]
     },
     "/account/rated/movies": {
         "url": "/account/:account_id/rated/movies?sort_by=",
         "auth": true,
-        "optionnal": ["account_id", "sort_by"]
+        "optional": ["account_id", "sort_by"]
     },
     "/account/rated/tv": {
         "url": "/account/:account_id/rated/tv?sort_by=",
         "auth": true,
-        "optionnal": ["account_id", "sort_by"]
+        "optional": ["account_id", "sort_by"]
     },
     "/account/rated/episodes": {
         "url": "/account/:account_id/rated/tv/episodes?sort_by=",
         "auth": true,
-        "optionnal": ["account_id", "sort_by"]
+        "optional": ["account_id", "sort_by"]
     },
     "/account/watchlist/movies": {
         "url": "/account/:account_id/watchlist/movies?sort_by=",
         "auth": true,
-        "optionnal": ["account_id", "sort_by"]
+        "optional": ["account_id", "sort_by"]
     },
     "/account/watchlist/tv": {
         "url": "/account/:account_id/watchlist/tv?sort_by=",
         "auth": true,
-        "optionnal": ["account_id", "sort_by"]
+        "optional": ["account_id", "sort_by"]
     },
     "/account/watchlist/edit": {
         "url": "/account/:account_id/watchlist",
@@ -63,7 +63,7 @@
             "media_id": null,
             "watchlist": null
         },
-        "optionnal": ["account_id"]
+        "optional": ["account_id"]
     },
 
     "/authentication/token/new": {
@@ -86,17 +86,17 @@
         "url": "/certification/tv/list"
     },
 
-    "changes/movie": {
+    "/changes/movie": {
         "url": "/movie/changes?start_date=&end_date=",
-        "optionnal": ["start_date", "end_date"]
+        "optional": ["start_date", "end_date"]
     },
-    "changes/tv": {
+    "/changes/tv": {
         "url": "/tv/changes?start_date=&end_date=",
-        "optionnal": ["start_date", "end_date"]
+        "optional": ["start_date", "end_date"]
     },
-    "changes/person": {
+    "/changes/person": {
         "url": "/person/changes?start_date=&end_date=",
-        "optionnal": ["start_date", "end_date"]
+        "optional": ["start_date", "end_date"]
     },
 
     "/collection/details": {
@@ -123,11 +123,11 @@
 
     "/discover/movie": {
         "url": "/discover/movie?region=&sort_by=&certification_country=&certification=&certification.lte=&include_adult=&include_video=&page=&primary_release_year=&primary_release_date.gte=&primary_release_date.lte=&release_date.gte=&release_date.lte=&vote_count.gte=&vote_count.lte=&vote_average.gte=&vote_average.lte=&with_cast=&with_crew=&with_companies=&with_genres=&with_keywords=&with_people=&year=&without_genres=&with_runtime.gte=&with_runtime.lte=&with_release_type=&with_original_language=",
-        "optionnal": ["region", "sort_by", "certification_country", "certification", "certification.lte", "include_adult", "include_video", "page", "primary_release_year", "primary_release_date.gte", "primary_release_date.lte", "release_date.gte", "release_date.lte", "vote_count.gte", "vote_count.lte", "vote_average.gte", "vote_average.lte", "with_cast", "with_crew", "with_companies", "with_genres", "with_keywords", "with_people", "year", "without_genres", "with_runtime.gte", "with_runtime.lte", "with_release_type", "with_original_language"]
+        "optional": ["region", "sort_by", "certification_country", "certification", "certification.lte", "include_adult", "include_video", "page", "primary_release_year", "primary_release_date.gte", "primary_release_date.lte", "release_date.gte", "release_date.lte", "vote_count.gte", "vote_count.lte", "vote_average.gte", "vote_average.lte", "with_cast", "with_crew", "with_companies", "with_genres", "with_keywords", "with_people", "year", "without_genres", "with_runtime.gte", "with_runtime.lte", "with_release_type", "with_original_language"]
     },
     "/discover/tv": {
         "url": "/discover/movie?&sort_by=&air_date.gte=&air_date.lte=&first_air_date.gte=&first_air_date.lte=&first_air_date_year=&page=&timezone=&vote_average.gte=&vote_count.gte=&with_genres=&with_networks=&without_genres=&with_runtime.gte=&with_runtime.lte=&include_null_first_air_dates=&with_original_language=",
-        "optionnal": ["sort_by", "air_date.gte", "air_date.lte", "first_air_date.gte", "first_air_date.lte", "first_air_date_year", "page", "timezone", "vote_average.gte", "vote_count.gte", "with_genres", "with_networks", "without_genres", "with_runtime.gte", "with_runtime.lte", "include_null_first_air_dates", "with_original_language"]
+        "optional": ["sort_by", "air_date.gte", "air_date.lte", "first_air_date.gte", "first_air_date.lte", "first_air_date_year", "page", "timezone", "vote_average.gte", "vote_count.gte", "with_genres", "with_networks", "without_genres", "with_runtime.gte", "with_runtime.lte", "include_null_first_air_dates", "with_original_language"]
     },
 
     "/find": {
@@ -142,20 +142,20 @@
     },
     "/genres/getMovies": {
         "url": "/genre/:genre_id/movies?include_adult=&sort_by=",
-        "optionnal": ["include_adults", "sort_by"]
+        "optional": ["include_adults", "sort_by"]
     },
 
     "/guest_session/rated/movies": {
         "url": "/guest_session/:guest_session_id/rated/movies?sort_by=",
-        "optionnal": ["sort_by"]
+        "optional": ["sort_by"]
     },
     "/guest_session/rated/tv": {
         "url": "/guest_session/:guest_session_id/rated/tv?sort_by=",
-        "optionnal": ["sort_by"]
+        "optional": ["sort_by"]
     },
     "/guest_session/rated/episodes": {
         "url": "/guest_session/:guest_session_id/rated/tv/episodes?sort_by=",
-        "optionnal": ["sort_by"]
+        "optional": ["sort_by"]
     },
 
     "/jobs": {
@@ -167,7 +167,7 @@
     },
     "/keywords/movies": {
         "url": "/keyword/:keyword_id/movies?include_adult=",
-        "optionnal": ["include_adults"]
+        "optional": ["include_adults"]
     },
 
     "/list/details": {
@@ -218,19 +218,19 @@
     },
     "/movie/alternative_titles": {
         "url": "movie/:movie_id/alternative_titles?country=",
-        "optionnal": ["country"]
+        "optional": ["country"]
     },
     "/movie/changes": {
         "url": "/movie/:movie_id/changes?start_date=&end_date=",
         "pagination": true,
-        "optionnal": ["start_date", "end_date"]
+        "optional": ["start_date", "end_date"]
     },
     "/movie/credits": {
         "url": "/movie/:movie_id/credits"
     },
     "/movie/images": {
         "url": "/movie/:movie_id/images?include_image_language=",
-        "optionnal": ["include_image_language"]
+        "optional": ["include_image_language"]
     },
     "/movie/keywords": {
         "url": "/movie/:movie_id/keywords"
@@ -277,22 +277,22 @@
     "/movie/now_playing": {
         "url": "/movie/now_playing?region=",
         "pagination": true,
-        "optionnal": ["region"]
+        "optional": ["region"]
     },
     "/movie/popular": {
         "url": "/movie/popular?region=",
         "pagination": true,
-        "optionnal": ["region"]
+        "optional": ["region"]
     },
     "/movie/top_rated": {
         "url": "/movie/top_rated?region=",
         "pagination": true,
-        "optionnal": ["region"]
+        "optional": ["region"]
     },
     "/movie/upcoming": {
         "url": "/movie/upcoming?region=",
         "pagination": true,
-        "optionnal": ["region"]
+        "optional": ["region"]
     },
 
     "/network": {
@@ -325,7 +325,7 @@
     "/person/changes": {
         "url": "/person/:id/changes?start_date=&end_date=",
         "pagination": true,
-        "optionnal": ["start_date", "end_date"]
+        "optional": ["start_date", "end_date"]
     },
     "/person/latest": {
         "url": "/person/latest"
@@ -354,22 +354,22 @@
     "/search/movie": {
         "url": "/search/movie?query=&include_adult=&region=&year=&primary_release_year=",
         "pagination": true,
-        "optionnal": ["include_adult", "region", "year", "primary_release_year"]
+        "optional": ["include_adult", "region", "year", "primary_release_year"]
     },
     "/search/multi": {
         "url": "/search/multi?query=&include_adult=&region=",
         "pagination": true,
-        "optionnal": ["include_adult", "region"]
+        "optional": ["include_adult", "region"]
     },
     "/search/person": {
         "url": "/search/person?query=&include_adult=&region=",
         "pagination": true,
-        "optionnal": ["include_adult", "region"]
+        "optional": ["include_adult", "region"]
     },
     "/search/tv": {
         "url": "/search/tv?query=&first_air_date_year=",
         "pagination": true,
-        "optionnal": ["first_air_date_year"]
+        "optional": ["first_air_date_year"]
     },
 
     "/timezones": {
@@ -389,7 +389,7 @@
     "/tv/changes": {
         "url": "/tv/:tv_id/changes?start_date=&end_date=",
         "pagination": true,
-        "optionnal": ["start_date", "end_date"]
+        "optional": ["start_date", "end_date"]
     },
     "/tv/content_ratings": {
         "url": "/tv/:tv_id/content_ratings"
@@ -460,7 +460,7 @@
     "/tv/season/changes": {
         "url": "/tv/season/:season_id?start_date=&end_date=",
         "pagination": true,
-        "optionnal": ["start_date", "end_date"]
+        "optional": ["start_date", "end_date"]
     },
     "/tv/season/account_states": {
         "url": "/tv/:tv_id/season/:season/account_states",
@@ -474,7 +474,7 @@
     },
     "/tv/season/images": {
         "url": "/tv/:tv_id/season/:season/images?include_image_language=",
-        "optionnal": ["include_image_language"]
+        "optional": ["include_image_language"]
     },
     "/tv/season/videos": {
         "url": "/tv/:tv_id/season/:season/videos"
@@ -487,7 +487,7 @@
     "/tv/episode/changes": {
         "url": "/tv/episode/:episode?start_date=&end_date=",
         "pagination": true,
-        "optionnal": ["start_date", "end_date"]
+        "optional": ["start_date", "end_date"]
     },
     "/tv/episode/account_states": {
         "url": "/tv/:tv_id/season/:season/episode/:episode/account_states",
@@ -501,7 +501,7 @@
     },
     "/tv/episode/images": {
         "url": "/tv/:tv_id/season/:season/episode/:episode/images?include_image_language=",
-        "optionnal": ["include_image_language"]
+        "optional": ["include_image_language"]
     },
     "/tv/episode/rate": {
         "url": "/tv/:tv_id/season/:season/episode/:episode/rating",

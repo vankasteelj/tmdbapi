@@ -15,6 +15,5 @@
     "main": "tmdb.js",
     "dependencies": {
         "got": "^6.7.1",
-        "sanitizer": "0.x.x"
     }
 }

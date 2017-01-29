@@ -6,7 +6,6 @@ const defaultLang = 'en-US';
 
 // requirejs modules
 const got = require('got');
-const sanitizer = require('sanitizer').sanitize;
 const methods = require('./methods.json');
 
 module.exports = class TMDB {
@@ -122,43 +121,8 @@ module.exports = class TMDB {
         req.body = JSON.stringify(req.body);
 
         return got(req.url, req).then(response => 
-            this._parseResponse(method, params, response)
+            JSON.parse(response.body);
         );
     }
-
-    // Parse response
-    _parseResponse (method, params, response) {
-        if (!response.body) return response.body;
-
-        return this._sanitize(JSON.parse(response.body));
-    }
-
-    // Sanitize output (xss)
-    _sanitize(input) {
-        const sanitizeString = string => sanitizer(string);
-
-        const sanitizeObject = obj => {
-            const result = obj;
-            for (let prop in obj) {
-                result[prop] = obj[prop];
-                if (obj[prop] && (obj[prop].constructor === Object || obj[prop].constructor === Array)) {
-                    result[prop] = sanitizeObject(obj[prop]);
-                } else if (obj[prop] && obj[prop].constructor === String) {
-                    result[prop] = sanitizeString(obj[prop]);
-                }
-            }
-            return result;
-        }
-
-        let output = input;
-        if (input && (input.constructor === Object || input.constructor === Array)) {
-            output = sanitizeObject(input);
-        } else if (input && input.constructor === String) {
-            output = sanitizeString(input);
-        }
-
-        return output;
-    }
-
 
 }
