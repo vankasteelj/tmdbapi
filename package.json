@@ -1,0 +1,20 @@
+{
+    "name": "tmdbapi",
+    "description": "TheMovieDB.com API wrapper for node.js",
+    "version": "0.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vankasteelj/tmdbapi.git"
+    },
+    "license": "MIT",
+    "keywords": [
+        "themoviedb",
+        "api",
+        "tmdb"
+    ],
+    "main": "tmdb.js",
+    "dependencies": {
+        "got": "^6.7.1",
+        "sanitizer": "0.x.x"
+    }
+}
