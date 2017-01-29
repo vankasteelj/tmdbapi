@@ -92,7 +92,6 @@ module.exports = class TMDB {
         }
 
         queryParts.push('api_key=' + this._settings.apiv3);
-        queryParts.push('session_id=' + this._authentication.session_id);
 
         let url = this._settings.endpoint;
 
@@ -113,8 +112,6 @@ module.exports = class TMDB {
             body: (method.body ? Object.assign({}, method.body) : {})
         };
 
-        //SESSION CHECK TODO
-
         for (let k in params) {
             if (k in req.body) req.body[k] = params[k];
         }
@@ -122,12 +119,12 @@ module.exports = class TMDB {
             if (!req.body[k]) delete req.body[k];
         }
 
-        console.log(req.url, req.body)
         req.body = JSON.stringify(req.body);
 
-        return got(req.url, req).then(response => this._parseResponse(method, params, response));
+        return got(req.url, req).then(response => 
+            this._parseResponse(method, params, response)
+        );
     }
-
 
     // Parse response
     _parseResponse (method, params, response) {

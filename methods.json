@@ -171,70 +171,41 @@
     },
 
     "/list/details": {
-        "url": "/list/:list_id?sort_by=",
-        "pagination": true,
-        "api_version": 4,
-        "optionnal": ["sort_by"]
+        "url": "/list/:list_id"
+    },
+    "/list/item_status": {
+        "url": "/list/:list_id?movie_id="
     },
     "/list/create": {
-        "url": "/list/",
+        "url": "/list",
+        "auth": true,
         "method": "POST",
-        "api_version": 4,
         "body": {
             "name": null,
-            "iso_639_1": "en",
             "description": null,
-            "public": null,
-            "iso_3166_1": null
+            "language": null
         }
     },
-    "/list/update": {
-        "url": "/list/:list_id",
-        "api_version": 4,
-        "method": "PUT",
+    "/list/add": {
+        "url": "/list/:list_id/add_item",
+        "auth": "true",
+        "method": "POST",
         "body": {
-            "description": null,
-            "name": null,
-            "public": null,
-            "sort_by": null
+            "media_id": null
+        }
+    },
+    "/list/remove": {
+        "url": "/list/:list_id/remove_item",
+        "auth": "true",
+        "method": "POST",
+        "body": {
+            "media_id": null
         }
     },
     "/list/clear": {
-        "url": "/list/:list_id/clear",
-        "api_version": 4
-    },
-    "/list/delete": {
-        "url": "/list/:list_id",
-        "api_version": 4,
-        "method": "DELETE"
-    },
-    "/list/items/add": {
-        "url": "/list/:list_id/items",
-        "api_version": 4,
-        "method": "POST",
-        "body": {
-            "items": []
-        }
-    },
-    "/list/items/update": {
-        "url": "/list/:list_id/items",
-        "api_version": 4,
-        "method": "PUT",
-        "body": {
-            "items": []
-        }
-    },
-    "/list/items/delete": {
-        "url": "/list/:list_id/items",
-        "api_version": 4,
-        "method": "DELETE",
-        "body": {
-            "items": []
-        }
-    },
-    "/list/items/status": {
-        "url": "/list/:list_id/item_status?media_id=&media_type=",
-        "api_version": 4
+        "url": "/list/:list_id/clear?confirm=",
+        "auth": "true",
+        "method": "POST"
     },
 
     "/movie/details": {
@@ -547,30 +518,5 @@
     },
     "/tv/episode/videos": {
         "url": "/tv/:tv_id/season/:season/episode/:episode/videos"
-    },
-
-    "/auth/request_token": {
-        "url": "/auth/request_token",
-        "api_version": 4,
-        "method": "POST",
-        "body": {
-            "redirect_to": null
-        }
-    },
-    "/auth/access_token": {
-        "url": "/auth/access_token",
-        "api_version": 4,
-        "method": "POST",
-        "body": {
-            "request_token": null
-        }
-    },
-    "/auth/logout": {
-        "url": "/auth/access_token",
-        "api_version": 4,
-        "method": "DELETE",
-        "body": {
-            "access_token": null
-        }
     }
 }
