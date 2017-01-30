@@ -83,9 +83,8 @@ module.exports = class TMDB {
     }
 
     // Parse url before api call
-    _parse(method, params) {
+    _parse(method, params = {}) {
         if (method.auth && !this._authentication.session_id) throw Error('You need to be logged in');
-        if (!params) params = {};
         
         const queryParts = [];
         const pathParts = [];
