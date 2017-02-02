@@ -2,7 +2,6 @@
 
 // default settings
 const defaultUrl = 'https://api.themoviedb.org/3';
-const defaultLang = 'en-US';
 
 // requirejs modules
 const got = require('got');
@@ -16,7 +15,7 @@ module.exports = class TMDB {
         this._settings = {
             apiv3: settings.apiv3,
             endpoint: settings.api_url || defaultUrl,
-            language: settings.language || defaultLang,
+            language: settings.language,
         };
 
         this._construct();
