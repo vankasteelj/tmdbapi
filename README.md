@@ -11,7 +11,7 @@ npm install tmdbapi
 ### Usage
 
 ```js
-const tmdb = new (require('tmdb'))({
+const tmdb = new (require('tmdbapi'))({
     apiv3: <YOUR_API_KEY>
     endpoint: //optional
     language: //optional
