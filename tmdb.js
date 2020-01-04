@@ -162,6 +162,7 @@ module.exports = class TMDB {
         }
 
         req.body = JSON.stringify(req.body);
+        if (req.body == '{}') delete req.body; //sending empty object as body replies 403
 
         return got(req.url, req).then(response => JSON.parse(response.body));
     }
